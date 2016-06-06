@@ -111,13 +111,6 @@ class AmberInstall {
 			wp_schedule_event( time(), 'fiveminutes', 'amber_cron_event_hook' );
 		}
 
-		add_rewrite_rule('^.*amber/cache/([a-f0-9]+)/?$', '/index.php?amber_cache=$1', "top");
-		add_rewrite_rule('^.*amber/cacheframe/([a-f0-9]+)/?$', '/index.php?amber_cacheframe=$1', "top");
-		add_rewrite_rule('^.*amber/cacheframe/([a-f0-9]+)/assets/(.*)/?$', '/index.php?amber_cacheframe=$1&amber_asset=$2', "top");
-		add_rewrite_rule('^.*amber/logcacheview?(.*)/?$', '/wp-admin/admin-ajax.php?action=amber_logcacheview&$1', "top");
-		add_rewrite_rule('^.*amber/status?(.*)/?$', '/wp-admin/admin-ajax.php?action=amber_status&$1', "top");
-		add_rewrite_rule('^.*amber/memento?(.*)/?$', '/wp-admin/admin-ajax.php?action=amber_memento&$1', "top");
-		flush_rewrite_rules();
 	}
 
 	public static function upgrade() {
